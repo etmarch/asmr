@@ -17,22 +17,23 @@ const Layout = ( { content = () => null } ) => (
 
 
     <AppCanvas>
-  <div>
-      <Header />
 
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-xs-12">
-            <div className="box">
-              <Paper>
-                {content()}
-              </Paper>
+        <Header />
 
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-xs-12">
+              <div className="box">
+                <main role="main" class="main-content">
+                  <Paper>
+                    {content()}
+                  </Paper>
+                </main>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <Footer /></div>
+        <Footer />
     </AppCanvas>
 );
 

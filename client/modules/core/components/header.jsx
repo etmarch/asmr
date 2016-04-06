@@ -3,6 +3,7 @@ import AppBar from 'material-ui/lib/app-bar';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 import LeftNav from 'material-ui/lib/left-nav';
 import Divider from 'material-ui/lib/divider';
+import Badge from 'material-ui/lib/badge';
 import IconMenu from 'material-ui/lib/menus/icon-menu';
 import SocialPublic from 'material-ui/lib/svg-icons/social/public';
 import ActionAssessment from 'material-ui/lib/svg-icons/action/assessment';
@@ -11,6 +12,7 @@ import ActionSettings from 'material-ui/lib/svg-icons/action/settings';
 import ActionCardMembership from 'material-ui/lib/svg-icons/action/card-membership';
 import ActionExitToApp from 'material-ui/lib/svg-icons/action/exit-to-app';
 import IconButton from 'material-ui/lib/icon-button';
+import NotificationsIcon from 'material-ui/lib/svg-icons/social/notifications';
 import MapsTerrain from 'material-ui/lib/svg-icons/maps/terrain';
 
 // Array of menu elements for leftNav
@@ -63,14 +65,14 @@ export default class Header extends React.Component {
 
   render() {
     return (
-<div>
-        <header>
-          <AppBar
-              title='ASMR Calls'
-              onTitleTouchTap={FlowRouter.go('/')}
-              iconElementRight={<MoreVertIcon />}
-              onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
-        </header>
+        <div>
+          <header>
+            <AppBar
+                title='ASMR Calls'
+                onTitleTouchTap={FlowRouter.go('/')}
+                iconElementRight={<NotificationsBadge />}
+                onLeftIconButtonTouchTap={this.handleToggle.bind(this)}/>
+          </header>
 
           <LeftNav
               docked={false}
@@ -78,10 +80,25 @@ export default class Header extends React.Component {
               open={this.state.open}
               onRequestChange={open => this.setState({open})}
           >
-            <AppBar showMenuIconButton={false} title='asmr' />
+            <AppBar showMenuIconButton={false} title='asmr'/>
             {this.menuItemRender( leftNavMenuItems )}
           </LeftNav>
-</div>
+        </div>
     );
   }
 }
+
+
+const NotificationsBadge = () => (
+    <span style={{marginTop: 0}}>
+    <Badge
+        badgeContent={10}
+        primary={true}
+        badgeStyle={{top: 12, right: 12, marginTop: 0}}
+    >
+      <IconButton tooltip="Notifications">
+        <NotificationsIcon/>
+      </IconButton>
+    </Badge>
+    </span>
+);
