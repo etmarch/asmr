@@ -63,15 +63,14 @@ export default class Header extends React.Component {
 
   render() {
     return (
-        <div>
-          <header>
-            <AppBar
-                title={<h3 className="app-title display-1 mdl-color-text--white-600">ASMR Calls</h3>}
-                onTitleTouchTap={FlowRouter.go('/')}
-                iconElementRight={<IconButton tooltip='Future place of Notification Badge'><MoreVertIcon /></IconButton>}
-                onLeftIconButtonTouchTap={this.handleToggle.bind(this)}>
-            </AppBar>
-          </header>
+<div>
+        <header>
+          <AppBar
+              title='ASMR Calls'
+              onTitleTouchTap={FlowRouter.go('/')}
+              iconElementRight={<MoreVertIcon />}
+              onLeftIconButtonTouchTap={this.handleToggle.bind(this)} />
+        </header>
 
           <LeftNav
               docked={false}
@@ -79,11 +78,10 @@ export default class Header extends React.Component {
               open={this.state.open}
               onRequestChange={open => this.setState({open})}
           >
-            <AppBar showMenuIconButton={false} title="ASMR CALLS"/>
+            <AppBar showMenuIconButton={false} title='asmr' />
             {this.menuItemRender( leftNavMenuItems )}
           </LeftNav>
-
-        </div>
+</div>
     );
   }
 }

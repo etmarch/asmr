@@ -26,7 +26,7 @@ header {
 }
 
 .box {
-    min-height: calc(100vh - 275px);
+    //min-height: calc(100vh - 275px);
 }
 
 footer {
@@ -34,4 +34,17 @@ footer {
     border-top: 1px solid #EAEAEA;
     padding-top: 10px;
     font-size: 12px;
+}
+
+
+.demo-card-wide.mdl-card {
+    width: 512px;
+}
+.demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 176px;
+    background: mediumpurple;
+}
+.demo-card-wide > .mdl-card__menu {
+    color: #fff;
 }

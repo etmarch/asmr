@@ -8,16 +8,16 @@ import Header from './header.jsx';
 import Footer from './footer.jsx';
 
 
-const muiTheme = getMuiTheme({
-  canvasColor: Colors.grey100
-});
+const muiTheme = getMuiTheme( {
+  canvasColor : Colors.grey200
+} );
 
 
-const Layout = ({content = () => null }) => (
-  <div>
+const Layout = ( { content = () => null } ) => (
+
 
     <AppCanvas>
-
+  <div>
       <Header />
 
       <div className="container-fluid">
@@ -25,16 +25,15 @@ const Layout = ({content = () => null }) => (
           <div className="col-xs-12">
             <div className="box">
               <Paper>
-      {content()}
+                {content()}
               </Paper>
+
             </div>
           </div>
         </div>
       </div>
-      <Footer />
+      <Footer /></div>
     </AppCanvas>
-
-  </div>
 );
 
-export default themeDecorator(muiTheme)(Layout);
+export default themeDecorator( muiTheme )( Layout );
