@@ -21,3 +21,6 @@ kadira:flow-router
 kadira:dochead
 accounts-password
 std:accounts-ui
+aldeed:simple-schema
+aldeed:collection2
+alanning:roles

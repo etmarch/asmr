@@ -9,7 +9,8 @@ import Footer from './footer.jsx';
 
 
 const muiTheme = getMuiTheme( {
-  canvasColor : Colors.grey200
+  canvasColor : Colors.grey200,
+  primary1Color: '#A0BBC6'
 } );
 
 
@@ -24,7 +25,7 @@ const Layout = ( { content = () => null } ) => (
           <div className="row">
             <div className="col-xs-12">
               <div className="box">
-                <main role="main" class="main-content">
+                <main role="main" className="main-content">
                   <Paper>
                     {content()}
                   </Paper>

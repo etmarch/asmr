@@ -68,6 +68,7 @@ export default class Header extends React.Component {
         <div>
           <header>
             <AppBar
+                style={{backgroundColor: '#27586B'}}
                 title='ASMR Calls'
                 onTitleTouchTap={FlowRouter.go('/')}
                 iconElementRight={<NotificationsBadge />}
