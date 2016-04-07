@@ -1,4 +1,5 @@
 import Colls from '../../lib/collections/index';
+import {Accounts} from 'meteor/std:accounts-ui';
 
 const users = [
   { name: 'admin', email: 'admin@admin.com', roles: [ 'admin' ], pw: 'admin1' },

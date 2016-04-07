@@ -9,5 +9,7 @@
     <orderEntry type="library" name="asmr node_modules" level="project" />
     <orderEntry type="library" name="meteor-packages-auto-import-browser" level="project" />
     <orderEntry type="library" name="meteor-packages-auto-import-npm" level="project" />
+    <orderEntry type="library" name="meteor-packages-auto-import-browser" level="project" />
+    <orderEntry type="library" name="meteor-packages-auto-import-npm" level="project" />
   </component>
 </module>

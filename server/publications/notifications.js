@@ -1,9 +1,9 @@
-import {Notifications} from '/lib/collections';
+import Collections from '/lib/collections/index';
 import {Meteor} from 'meteor/meteor';
 import {check} from 'meteor/check';
 
 export default function () {
   Meteor.publish('notifications', function (notificationsId) {
-    return Notifications.find(notificationsId);
+    return Collections.Notifications.find(notificationsId);
   });
 }

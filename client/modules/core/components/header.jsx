@@ -14,31 +14,35 @@ import ActionExitToApp from 'material-ui/lib/svg-icons/action/exit-to-app';
 import IconButton from 'material-ui/lib/icon-button';
 import NotificationsIcon from 'material-ui/lib/svg-icons/social/notifications';
 import MapsTerrain from 'material-ui/lib/svg-icons/maps/terrain';
-
+import FlowRouter from 'meteor/kadira:flow-router';
 // Array of menu elements for leftNav
 const leftNavMenuItems = [
-  { url : '/dashboard', text : 'Dashboard', icon : <SocialPublic /> },
-  { url : '/admin/invite', text : 'Invite New Client', icon : <ActionAssessment /> },
-  { url : '/logout', text : 'Sign Out', icon : <ActionExitToApp /> }
+  { url: '/videos', text: 'Videos', icon: <SocialPublic /> },
+  { url: '/', text: 'Home', icon: <ActionAssessment /> },
+  { url: '/logout', text: 'Sign Out', icon: <ActionExitToApp /> }
 ];
 
 export default class Header extends React.Component {
   // ToDo: Place all state stuff in actions
   constructor( props ) {
     super( props );
-    this.state = { open : false, name : null };
+    this.state = { open: false, name: null };
   }
 
   handleToggle() {
-    this.setState( { open : !this.state.open } );
+    this.setState( { open: !this.state.open } );
   }
 
   handleClose() {
-    this.setState( { open : false } );
+    this.setState( { open: false } );
   }
 
   componentDidMount() {
     console.log( JSON.stringify( this.props ) + ' ' + this );
+  }
+
+  handleTitleTouch() {
+    FlowRouter.go('/');
   }
 
 
@@ -70,7 +74,7 @@ export default class Header extends React.Component {
             <AppBar
                 style={{backgroundColor: '#27586B'}}
                 title='ASMR Calls'
-                onTitleTouchTap={FlowRouter.go('/')}
+                onTitleTouchTap={this.handleTitleTouch}
                 iconElementRight={<NotificationsBadge />}
                 onLeftIconButtonTouchTap={this.handleToggle.bind(this)}/>
           </header>

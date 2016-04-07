@@ -6,6 +6,7 @@ import MainLayout from './components/main_layout.jsx';
 import Home from './components/home.jsx';
 import NewVideo from '../videos/containers/new_video';
 import SingleVideo from '../videos/containers/single_video';
+import VideoList from '../videos/containers/videos_list';
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(MainLayout);
@@ -52,6 +53,15 @@ export default function (injectDeps, {FlowRouter}) {
     action({videoId}) {
       mount(MainLayoutCtx, {
         content: () => (<SingleVideo videoId={videoId} />)
+      });
+    }
+  });
+
+  FlowRouter.route('/videos', {
+    name: 'video-list',
+    action() {
+      mount(MainLayoutCtx, {
+        content: () => (<VideoList />)
       });
     }
   });
